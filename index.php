@@ -120,17 +120,13 @@
   </div>
 </div>
 
-
- 
-    
-
-
- 
-
-  
   <div class="col-md-2">
     <!-- sidenav -->
     <h1> hey</h1>
+  </div>
+  <!-- last child-->
+  <div class="bg-info p-3 text-center">
+    <p>All Rights Reserved - Designed by I. Rh. I. Jones - 2023</p>
   </div>
 </div>
 
