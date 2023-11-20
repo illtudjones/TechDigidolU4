@@ -1,5 +1,50 @@
 <?php
-    include("../Includes/connect.php")
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
+
+    include("../Includes/connect.php");
+
+    if(isset($_POST['insert_product'])){
+
+        $product_title=$_POST['product_title'];
+        $description=$_POST['description'];
+        $product_keywords=$_POST['product_keywords'];
+        $product_category=$_POST['product_category'];
+        $product_brands=$_POST['product_brands'];
+        $product_price=$_POST['product_price'];
+        $product_status = 'true';
+
+        //Accessing Images
+        $product_image1=$_FILES['product_image1']['name'];
+        $product_image2=$_FILES['product_image2']['name'];
+
+        //accessing image tmp name
+        $tmp_image1=$_FILES['product_image1']['tmp_name'];
+        $tmp_image2=$_FILES['product_image2']['tmp_name'];
+
+        //checking empty condition
+        if($product_title =='' or $description == '' or $product_keywords == '' or $product_category =='' 
+        or $product_brands =='' or $product_price =='' or $product_image1 =='' or $product_image2 ==''){
+            echo "<script> alert('Please fill in all required fields')</script>";
+            exit();
+        }else{
+            move_uploaded_file($tmp_image1, "./product_images/$product_image1");
+            move_uploaded_file($tmp_image2, "./product_images/$product_image2");
+        }
+        
+        //insert query
+        $insert_products = "insert into `products` (product_title,product_description,product_keywords,category_id,brand_id,product_image1,product_image2,product_price,date,status)
+        values('$product_title','$description','$product_keywords','$product_category','$product_brands','$product_image1','$product_image2','$product_price',now(),'$product_status')";
+        $result_query=mysqli_query($conn, $insert_products);
+        if($result_query){
+            echo "<script>alert('Successfully inserted the product')</script>";
+        }
+
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +76,8 @@
 
             <!-- Description -->
             <div class="form-outline mb-4 w-50 m-auto">
-                <label for="product_description" class="form-label">Product Description</label>
-                <input type="text" name="product_description" id="product_description" class="form-control" placeholder="Enter Product Description" autocomplete="off" required="required">
+                <label for="description" class="form-label">Product Description</label>
+                <input type="text" name="description" id="description" class="form-control" placeholder="Enter Product Description" autocomplete="off" required="required">
             </div>
 
             <!-- keywords -->
