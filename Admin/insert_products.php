@@ -27,7 +27,7 @@ ini_set('display_errors', 1);
 
         //checking empty condition
         if($product_title =='' or $description == '' or $product_keywords == '' or $product_category =='' 
-        or $product_brands =='' or $product_price =='' or $product_image1 =='' or $product_image2 ==''){
+        or $product_brands =='' or $product_price =='' or $product_image1 ==''){
             echo "<script> alert('Please fill in all required fields')</script>";
             exit();
         }else{

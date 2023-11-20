@@ -88,41 +88,42 @@
   <div class="col-md-10">
     <!-- products -->
     <div class="row">
-    <div class="col-md-4">
-      <div class="card">
-        <img src="./Images/motherboard.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-      </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="card">
-        <img src="./Images/i7cpu.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-      </div>
-    </div>
+    <?php
+      $select_query ="select * from `products` order by rand()";
+      $result_query=mysqli_query($conn,$select_query);
+      //$row=mysqli_fetch_assoc($result_query);
+      //echo $row['product_title'];
 
-    <div class="col-md-4">
-      <div class="card">
-        <img src="./Images/psu.jpeg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-      </div>
-    </div>
+      while($row = mysqli_fetch_assoc($result_query)){
+        $product_id=$row['product_id'];
+        $product_title=$row['product_title'];
+        $product_description=$row['product_description'];
+        $product_keywords=$row['product_keywords'];
+        $product_category=$row['product_category'];
+        $product_brands=$row['product_brands'];
+        $product_image1=$row['product_image1'];
+        $product_price=$row['product_price'];
 
+        echo "<div class='col-md-4 mb-2'>
+        <div class='card'>
+          <img src='../Admin/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+            <div class='card-body'>
+              <h5 class='card-title'>$product_title</h5>
+              <p class='card-text'>$product_description</p>
+              <a href='#' class='btn btn-primary'>Go somewhere</a>
+            </div>
+        </div>
+      </div>";
+
+      }
+
+
+    ?>
   </div>
 </div>
+
+
 <!-- sidenav -->
   <div class="col-md-2 bg-secondary p-0" class="side_nav">
     <ul class="navbar-nav me-auto text-center">
@@ -133,7 +134,7 @@
 
       <?php
 
-        $select_brands = "select * from `brands`";
+        $select_brands = "select * from `brands` order by brand_title";
         $result_brands = mysqli_query($conn, $select_brands);
 
         while($row_data=mysqli_fetch_assoc($result_brands)){
@@ -152,7 +153,7 @@
       
       <?php
 
-        $select_categories = "select * from `categories`";
+        $select_categories = "select * from `categories` order by category_title";
         $result_categories = mysqli_query($conn, $select_categories);
 
         while($row_data=mysqli_fetch_assoc($result_categories)){
