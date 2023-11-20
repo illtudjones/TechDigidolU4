@@ -1,3 +1,7 @@
+<?php
+  include('./Includes/connect.php');
+?>
+
 <!DOCTYPE html>
 <style>
 <?php include 'style.css'; ?>
@@ -119,12 +123,52 @@
 
   </div>
 </div>
+<!-- sidenav -->
+  <div class="col-md-2 bg-secondary p-0" class="side_nav">
+    <ul class="navbar-nav me-auto text-center">
+      <!-- Brands -->
+      <li class="nav-item bg-info">
+      <a href="#" class="nav-link text-dark"><h4>Brands</h4></a>
+      </li>
 
-  <div class="col-md-2">
-    <!-- sidenav -->
-    <h1> hey</h1>
+      <?php
+
+        $select_brands = "select * from `brands`";
+        $result_brands = mysqli_query($conn, $select_brands);
+
+        while($row_data=mysqli_fetch_assoc($result_brands)){
+          $brand_title=$row_data['brand_title'];
+          $brand_id=$row_data['brand_id'];
+          echo "<li class='nav-item'>
+          <a href='index.php?brand=$brand_id' class='nav-link text-light'>$brand_title</a>
+          </li>";
+        }
+      ?>
+
+      <!-- Categories -->
+      <li class="nav-item bg-info">
+        <a href="#" class="nav-link text-dark"><h4>Categories</h4></a>
+      </li>
+      
+      <?php
+
+        $select_categories = "select * from `categories`";
+        $result_categories = mysqli_query($conn, $select_categories);
+
+        while($row_data=mysqli_fetch_assoc($result_categories)){
+          $category_title=$row_data['category_title'];
+          $category_id=$row_data['category_id'];
+          echo "<li class='nav-item'>
+          <a href='index.php?brand=$category_id' class='nav-link text-light'>$category_title</a>
+          </li>";
+        }
+        ?>
+
+    </ul>
   </div>
-  <!-- last child-->
+ 
+ 
+<!-- last child-->
   <div class="bg-info p-3 text-center">
     <p>All Rights Reserved - Designed by I. Rh. I. Jones - 2023</p>
   </div>

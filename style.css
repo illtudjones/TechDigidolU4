@@ -3,7 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+.side_nav{
+    margin-right: 20px;
+    
+}
 .logo {
     width: 5%;
     height: 5%;
@@ -16,7 +19,6 @@
 .admin_image{
     width: 100px;
     object-fit: contain;
-
 }
 .footer{
     position: absolute;
