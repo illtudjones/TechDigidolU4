@@ -18,7 +18,7 @@
     <!-- navbar -->
     <div class="container-fluid p-0">
         <!-- First Child -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
             <div class="container-fluid">
                 <img src="../Images/logo.png" alt="" class="logo">
                 <nav class="navbar navbar-expand-lg">
@@ -44,7 +44,7 @@
                     <p class="text-light text-center">Admin Name</p>
                 </div>
                 <div class="button text-center">
-                    <button class="my-3"><a href="" class="nav-link text-dark bg-info my-1 mx-1">Insert Products</a></button>
+                    <button class="my-3"><a href="insert_products.php" class="nav-link text-dark bg-info my-1 mx-1">Insert Products</a></button>
                     <button class="my-3"><a href="" class="nav-link text-dark bg-info my-1 mx-1">View Products</a></button>
                     <button class="my-3"><a href="index.php?insert_categories" class="nav-link text-dark bg-info my-1 mx-1">Insert Categories</a></button>
                     <button class="my-3"><a href="" class="nav-link text-dark bg-info my-1 mx-1">View Categories</a></button>
