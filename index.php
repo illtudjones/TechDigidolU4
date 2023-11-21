@@ -68,7 +68,7 @@
     <li class = "nav-item">
       <a class="nav-link" href="#"> welcome guest</a>
     <li class = "nav-item">
-      <a class="nav-link" href="#"> Login</a>
+      <a class="nav-link" href="./Admin/index.php"> Login</a>
     </li>
   <ul>
 </nav>
@@ -92,9 +92,6 @@
     <?php
       $select_query ="select * from `products` order by rand()";
       $result_query=mysqli_query($conn,$select_query);
-      //$row=mysqli_fetch_assoc($result_query);
-      //echo $row['product_title'];
-
       while($row = mysqli_fetch_assoc($result_query)){
         $product_id=$row['product_id'];
         $product_title=$row['product_title'];

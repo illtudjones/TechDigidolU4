@@ -20,7 +20,8 @@
         <!-- First Child -->
         <nav class="navbar navbar-expand-lg navbar-light bg-danger">
             <div class="container-fluid">
-                <img src="../Images/logo.png" alt="" class="logo">
+                <a href="../index.php"><img src="../Images/logo.png" alt="" class="logo"></a>
+                
                 <nav class="navbar navbar-expand-lg">
                     <ul class="navbar-nav">
                         <li class="nav-item">
