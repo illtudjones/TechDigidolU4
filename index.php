@@ -90,7 +90,9 @@
     <!-- products -->
     <div class="row">
       <?php
-      getproducts()
+      getproducts();
+      get_unique_categories();
+      get_unique_brand()
       ?>
   </div>
 </div>
