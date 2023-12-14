@@ -32,21 +32,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Hafan</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Hafan</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Register</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Cynhyrchion
-          </a>
-          <ul class="dropdown-menu">
+          <a class="nav-link" href="display_all.php">Cynhyrchion</a>
+          <!-- <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Cyfrifiadur</a></li>
             <li><a class="dropdown-item" href="#">Glinfwrdd</a></li>
             <li><a class="dropdown-item" href="#">Mac</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="#">Cyswllt</a>
         </li>
@@ -124,9 +122,10 @@
  
  
 <!-- last child-->
-  <div class="bg-info p-3 text-center">
-    <p>All Rights Reserved - Designed by I. Rh. I. Jones - 2023</p>
-  </div>
+<!-- include footer -->
+<?php 
+    include('./Includes/footer.php')
+?>
 </div>
 
 </div>
