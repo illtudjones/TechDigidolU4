@@ -188,4 +188,37 @@
 
     }
 
+
+    //search products
+
+    function searchproduct(){
+        global $conn;
+            if(isset($_GET['search_data_product'])){
+                $search_data_value=$_GET['search_data'];
+
+                $search_query="Select * from `products` where product_title like '%$search_data_value%'";
+                $result_query=mysqli_query($conn,$search_query);
+                while($row = mysqli_fetch_assoc($result_query)){
+                    $product_id=$row['product_id'];
+                    $product_title=$row['product_title'];
+                    $product_description=$row['product_description'];
+                    $product_keywords=$row['product_keywords'];
+                    $product_category=$row['product_category'];
+                    $product_brands=$row['product_brands'];
+                    $product_image1=$row['product_image1'];
+                    $product_price=$row['product_price'];
+
+                    echo "<div class='col-md-4 mb-2'>
+                    <div class='card'>
+                    <img src='../Admin/product_images/$product_image1' class='card-img-top' alt='$product_title'>
+                        <div class='card-body'>
+                        <h5 class='card-title'>$product_title</h5>
+                        <p class='card-text'>$product_description</p>
+                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                        </div>
+                    </div>
+                </div>";
+                }
+            }
+        }
 ?>
