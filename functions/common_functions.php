@@ -27,7 +27,9 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
-                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                        <a href='#' class='btn btn-info'>Add to Cart</a>
+                        <a href='product_details.php?product_id=$product_id'
+                        class='btn btn-secondary'>View More</a>
                         </div>
                     </div>
                 </div>";
@@ -64,7 +66,8 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
-                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                        <a href='product_details.php?product_id=$product_id'
+                        class='btn btn-secondary'>View More</a>
                         </div>
                     </div>
                 </div>";
@@ -106,7 +109,8 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
-                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                        <a href='product_details.php?product_id=$product_id'
+                        class='btn btn-secondary'>View More</a>
                         </div>
                     </div>
                 </div>";
@@ -147,7 +151,8 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
-                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                        <a href='product_details.php?product_id=$product_id'
+                        class='btn btn-secondary'>View More</a>
                         </div>
                     </div>
                 </div>";
@@ -218,7 +223,8 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
-                        <a href='#' class='btn btn-primary'>Go somewhere</a>
+                        <a href='product_details.php?product_id=$product_id'
+                        class='btn btn-secondary'>View More</a>
                         </div>
                     </div>
                 </div>";

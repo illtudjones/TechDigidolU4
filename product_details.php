@@ -52,7 +52,7 @@
           <a class="nav-link" href="#">Basged <i class="fa-solid fa-cart-shopping"><sup> 1</sup></i></a>
         </li>
       </ul>
-      <form class="d-flex" action="" method="get">
+      <form class="d-flex" action="search_products.php" method="get">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <input type="submit" value="search" class="btn btn-outline-light" name="search_data_product">
       </form>
@@ -81,14 +81,39 @@
 
 <!-- fourth child -->
 
-<div class="row">
-
- 
+<div class="row px-1">
   <div class="col-md-10">
     <!-- products -->
     <div class="row">
+        <div class="col-md-4">
+            <div class='card'>
+                <img src='./Images/motherboard.jpeg' class='card-img-top' alt='$product_title'>
+                <div class='card-body'>
+                    <h5 class='card-title'>$product_title</h5>
+                    <p class='card-text'>$product_description</p>
+                    <a href='#' class='btn btn-primary'>Add to Cart</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="text-center text-primary mb-5">Related Products</h4>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-6">
+                    
+                    </div>
+            </div>
+
+        </div>
+      
+      
+      
       <?php
-      searchproduct();
       get_unique_categories();
       get_unique_brand()
       ?>

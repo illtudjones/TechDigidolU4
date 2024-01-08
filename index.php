@@ -76,7 +76,7 @@
 
 <div class="bg-light">
   <h2 class="text-center"> Siop Beth Bynnag</h3>
-  <p class ="text-center">Miss Cripps is mental</p>
+  <p class ="text-center">Gwerthu beth Bynnag!</p>
 </div>
 
 <!-- fourth child -->
