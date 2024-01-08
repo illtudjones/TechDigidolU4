@@ -198,6 +198,10 @@
 
                 $search_query="Select * from `products` where product_title like '%$search_data_value%'";
                 $result_query=mysqli_query($conn,$search_query);
+                $num_of_rows=mysqli_num_rows($result_query);
+                if($num_of_rows==0){
+                    echo "<h2 class='text-center text-danger'>This Product does not exsist</h2>";
+                }
                 while($row = mysqli_fetch_assoc($result_query)){
                     $product_id=$row['product_id'];
                     $product_title=$row['product_title'];

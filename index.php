@@ -52,7 +52,7 @@
           <a class="nav-link" href="#">Basged <i class="fa-solid fa-cart-shopping"><sup> 1</sup></i></a>
         </li>
       </ul>
-      <form class="d-flex" action="search_product.php" method="get">
+      <form class="d-flex" action="search_products.php" method="get">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search_data">
         <input type="submit" value="search" class="btn btn-outline-light" name="search_data_product">
       </form>
@@ -76,7 +76,7 @@
 
 <div class="bg-light">
   <h2 class="text-center"> Siop Beth Bynnag</h3>
-  <p class ="text-center">Gwethu beth Bynnag!</p>
+  <p class ="text-center">Miss Cripps is mental</p>
 </div>
 
 <!-- fourth child -->
