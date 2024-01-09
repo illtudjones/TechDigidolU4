@@ -85,38 +85,13 @@
   <div class="col-md-10">
     <!-- products -->
     <div class="row">
-        <div class="col-md-4">
-            <div class='card'>
-                <img src='./Images/motherboard.jpeg' class='card-img-top' alt='$product_title'>
-                <div class='card-body'>
-                    <h5 class='card-title'>$product_title</h5>
-                    <p class='card-text'>$product_description</p>
-                    <a href='#' class='btn btn-primary'>Add to Cart</a>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4 class="text-center text-primary mb-5">Related Products</h4>
-                </div>
-                <div class="col-md-6">
-
-                </div>
-                <div class="col-md-6">
-                    
-                    </div>
-            </div>
-
-        </div>
-      
-      
-      
       <?php
+      viewdetails();
       get_unique_categories();
       get_unique_brand()
       ?>
+      
   </div>
 </div>
 
