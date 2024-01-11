@@ -26,7 +26,7 @@
                     <img src='../Admin/product_images/$product_image1' class='card-img-top' alt='$product_title'>
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
-                        <p class='card-text'>$product_description</p>
+                        <p class='card-text card-text-short'>$product_description</p>
                         <a href='#' class='btn btn-info'>Add to Cart</a>
                         <a href='product_details.php?product_id=$product_id'
                         class='btn btn-secondary'>View More</a>
