@@ -59,6 +59,12 @@
     </div>
   </div>
 </nav>
+<!-- calling basket details -->
+
+<?php
+  basket();
+?>
+
 
 <!-- second child -->
 

@@ -27,7 +27,7 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text card-text-short'>$product_description</p>
-                        <a href='#' class='btn btn-info'>Add to Cart</a>
+                        <a href='index.php?add_to_basket=$product_id' class='btn btn-info'>Add to Basket</a>
                         <a href='product_details.php?product_id=$product_id'
                         class='btn btn-secondary'>View More</a>
                         </div>
@@ -66,6 +66,7 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
+                        <a href='index.php?add_to_basket=$product_id' class='btn btn-info'>Add to Basket</a>
                         <a href='product_details.php?product_id=$product_id'
                         class='btn btn-secondary'>View More</a>
                         </div>
@@ -109,6 +110,7 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
+                        <a href='index.php?add_to_basket=$product_id' class='btn btn-info'>Add to Basket</a>
                         <a href='product_details.php?product_id=$product_id'
                         class='btn btn-secondary'>View More</a>
                         </div>
@@ -151,6 +153,7 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
+                        <a href='index.php?add_to_basket=$product_id' class='btn btn-info'>Add to Basket</a>
                         <a href='product_details.php?product_id=$product_id'
                         class='btn btn-secondary'>View More</a>
                         </div>
@@ -223,6 +226,7 @@
                         <div class='card-body'>
                         <h5 class='card-title'>$product_title</h5>
                         <p class='card-text'>$product_description</p>
+                        <a href='index.php?add_to_basket=$product_id' class='btn btn-info'>Add to Basket</a>
                         <a href='product_details.php?product_id=$product_id'
                         class='btn btn-secondary'>View More</a>
                         </div>
@@ -261,7 +265,8 @@
                             <div class='card-body'>
                                 <h5 class='card-title'>$product_title</h5>
                                 <p class='card-text'>$product_description</p>
-                                <a href='#' class='btn btn-primary'>Add to Cart</a>
+                                <a href='index.php?add_to_basket=$product_id' class='btn btn-info'>Add to Basket</a>
+                                <a href='index.php' class='btn btn-secondary'>Back to Products</a>
                             </div>
                         </div>
                     </div>
@@ -284,5 +289,25 @@
                 }
           }
         }
+        }
+
+        //cart function
+        function basket(){
+            if(isset($_GET['add_to_basket'])){
+                global $conn;
+                $basket_product_id=$_GET['add_to_basket'];
+                $select_query="Select * from `basket_details` where product_id=$basket_product_id";
+                $result_query=mysqli_query($conn, $select_query);
+                $num_of_rows=mysqli_num_rows($result_query);
+                if($num_of_rows>0){
+                    echo "<script> alert('This item is already present in the basket') </script>";
+                    echo "<script> window.open('index.php','_self')</script>";
+                }else{
+                    $insert_query="insert into `basket_details` (product_id, quantity) values ($basket_product_id, 0)";
+                    $result_query=mysqli_query($conn, $insert_query);
+                    echo "<script> alert('Item has been added to basket') </script>";
+                    echo "<script> window.open('index.php','_self')</script>";
+                }
+            }
         }
 ?>
